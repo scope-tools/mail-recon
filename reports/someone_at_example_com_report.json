@@ -1,0 +1,37 @@
+{
+  "breaches": [],
+  "breachdirectory_error": "BreachDirectory forbade the request (403)",
+  "reputation": null,
+  "disposable": null,
+  "badges": [],
+  "emailrep_error": "Rate limited by EmailRep.io",
+  "has_gravatar": false,
+  "whois": {
+    "creation_date": "1995-08-14",
+    "age_days": 10915,
+    "registrar": "RESERVED-Internet Assigned Numbers Authority"
+  },
+  "dns": {
+    "a": [
+      "23.215.0.136",
+      "23.215.0.138",
+      "96.7.128.175",
+      "96.7.128.198",
+      "23.192.228.80",
+      "23.192.228.84"
+    ],
+    "mx": [
+      ""
+    ]
+  },
+  "abuseipdb": {
+    "abuseConfidenceScore": 0,
+    "countryCode": "US",
+    "domain": "akamai.com"
+  },
+  "blacklists": {
+    "zen.spamhaus.org": true,
+    "bl.spamcop.net": false,
+    "b.barracudacentral.org": false
+  }
+}
