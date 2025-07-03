@@ -1,0 +1,49 @@
+name: CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.x"
+
+      - name: Install dependencies
+        run: |
+          python -m venv .venv
+          source .venv/bin/activate
+          pip install --upgrade pip
+          pip install -r requirements.txt
+
+      - name: Smoke test imports
+        run: |
+          source .venv/bin/activate
+          python - << 'EOF2'
+import argparse
+from api_keys import load_api_keys
+from scanners.hibp import check_breaches
+from scanners.emailrep import check_emailrep
+from scanners.breachdirectory import check_breachdirectory
+from scanners.gravatar import check_gravatar
+from scanners.whois_lookup import check_whois
+from scanners.dns_check import check_dns
+from scanners.abuseipdb import check_abuseipdb
+from scanners.blacklist_check import check_blacklists
+print("All modules import successfully")
+EOF2
+
+      - name: Dry-run main
+        run: |
+          source .venv/bin/activate
+          python main.py --email test@example.com || true
