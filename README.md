@@ -1,7 +1,7 @@
 ````markdown
 # MailRecon
 
-MailRecon is a lightweight email and domain profiling tool designed for inbox safety, OSINT workflows, and digital threat awareness. It runs passive lookups on email addresses and their domains using public data sources, then outputs a risk-rated report in PDF and JSON format.
+MailRecon is a comprehensive email and phone privacy analysis tool designed for digital safety, OSINT workflows, and privacy protection. It performs detailed analysis on email addresses, domains, and phone numbers using multiple data sources, then generates comprehensive reports in PDF and JSON format.
 
 Runs locally. No cloud. No data collection.
 
@@ -23,7 +23,15 @@ Runs locally. No cloud. No data collection.
 - DNSBL blacklist checks against:  
   - zen.spamhaus.org  
   - bl.spamcop.net  
-  - b.barracudacentral.org  
+  - b.barracudacentral.org
+
+### Phone Privacy Analysis
+- Phone number format validation and normalization
+- Country/region identification  
+- VoIP/disposable number detection
+- Spam risk assessment based on patterns
+- Sequential and repetitive digit analysis
+- Privacy risk scoring and recommendations
 
 ## Installation
 
@@ -39,10 +47,19 @@ pip install -r requirements.txt
 
 ## Usage
 
+### Email Analysis
 To scan an email address and generate a full report
 
 ```bash
 python3 main.py --email someone@example.com
+```
+
+### Phone Analysis
+To analyze a phone number for privacy risks
+
+```bash
+python3 main.py --phone "+1-555-123-4567"
+python3 main.py --phone "5551234567"
 ```
 
 Example output
@@ -90,13 +107,18 @@ PDF report saved as `reports/<email>_report.pdf`
 
 ## Roadmap
 
+### ✅ Completed
 - Manual scanning with PDF and JSON output
 - BreachDirectory free breach lookup
 - EmailRep and AbuseIPDB API integrations
 - Gravatar, Whois, DNS and DNSBL checks
-- Gmail inbox auto-scanning (OAuth)
 - Phone number intelligence module
+
+### 🚧 In Progress / Planned
+- Gmail inbox auto-scanning (OAuth)
 - LLM-powered summaries via Ollama
+- Enhanced phone carrier detection
+- Advanced pattern matching for phone fraud detection
 
 ## Privacy
 

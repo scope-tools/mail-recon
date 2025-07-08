@@ -1,0 +1,22 @@
+{
+  "scan_type": "phone",
+  "phone_analysis": {
+    "original": "+1-555-123-4567",
+    "normalized": "+15551234567",
+    "privacy_risks": [
+      "Sequential digit pattern detected",
+      "Repetitive digit pattern detected",
+      "Likely VoIP/disposable number"
+    ],
+    "carrier_info": null,
+    "disposable": true,
+    "spam_score": 60,
+    "country_code": "+1",
+    "country": "US/Canada",
+    "expected_length": [
+      11,
+      11
+    ],
+    "privacy_assessment": "high_risk"
+  }
+}

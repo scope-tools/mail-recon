@@ -1,0 +1,21 @@
+{
+  "scan_type": "phone",
+  "phone_analysis": {
+    "original": "2025551234",
+    "normalized": "2025551234",
+    "privacy_risks": [
+      "Sequential digit pattern detected",
+      "Repetitive digit pattern detected"
+    ],
+    "carrier_info": null,
+    "disposable": false,
+    "spam_score": 35,
+    "country_code": "+1",
+    "country": "US (assumed)",
+    "expected_length": [
+      10,
+      10
+    ],
+    "privacy_assessment": "medium_risk"
+  }
+}
